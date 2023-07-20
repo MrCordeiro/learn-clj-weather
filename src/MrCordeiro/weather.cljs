@@ -16,7 +16,7 @@
   (r/atom {:title "WhichWeather"
            :city ""
            :temperatures {:today {:label "Today" :value nil}
-                          :tommorrow {:label "Tomorrow" :value nil}}}))
+                          :tomorrow {:label "Tomorrow" :value nil}}}))
 
 (defn title []
   [:h1 (:title @app-state)])
@@ -30,6 +30,7 @@
 (defn handle-response [resp]
   (let [today (get-in resp ["list" 0 "main" "temp"])
         tomorrow (get-in resp ["list" 8 "main" "temp"])]
+    (println today tomorrow)
     (swap! app-state
            update-in [:temperatures :today :value] (constantly today))
     (swap! app-state
