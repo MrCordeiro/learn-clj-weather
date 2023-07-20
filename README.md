@@ -11,7 +11,7 @@ Mini weather applet with a form that make requests to an API.
 To get an interactive development environment run:
 
 ```shell
-clj -A:fig:build
+clj -M:fig:build
 ```
 
 This will auto compile and send all changes to the browser without the
@@ -34,7 +34,7 @@ To create a production build run:
 
 ```shell
 rm -rf target/public
-clojure -A:fig:min
+clojure -M:fig:min
 ```
 
 ## Learning notes
